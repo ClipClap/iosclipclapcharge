@@ -1,0 +1,359 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F103D0DA1C195C4500FA5A2F /* ClipClapCharge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F103D0D91C195C4500FA5A2F /* ClipClapCharge.framework */; };
+		F103D0DB1C195C4500FA5A2F /* ClipClapCharge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F103D0D91C195C4500FA5A2F /* ClipClapCharge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9D5B1DD1C162078004D68E9 /* TotalPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D5B1DC1C162078004D68E9 /* TotalPaymentController.m */; };
+		F9D5B1E31C162281004D68E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D5B1E21C162281004D68E9 /* ViewController.m */; };
+		F9FAD4811C137663004FA75A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FAD4801C137663004FA75A /* main.m */; };
+		F9FAD4841C137663004FA75A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FAD4831C137663004FA75A /* AppDelegate.m */; };
+		F9FAD4871C137663004FA75A /* ItemsPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FAD4861C137663004FA75A /* ItemsPaymentController.m */; };
+		F9FAD48A1C137663004FA75A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FAD4881C137663004FA75A /* Main.storyboard */; };
+		F9FAD48C1C137663004FA75A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9FAD48B1C137663004FA75A /* Assets.xcassets */; };
+		F9FAD48F1C137663004FA75A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FAD48D1C137663004FA75A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F103D0DC1C195C4600FA5A2F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F103D0DB1C195C4500FA5A2F /* ClipClapCharge.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F103D0D91C195C4500FA5A2F /* ClipClapCharge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClipClapCharge.framework; path = PayAndGoSample/ClipClapCharge.framework; sourceTree = "<group>"; };
+		F9D5B1DB1C162078004D68E9 /* TotalPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalPaymentController.h; sourceTree = "<group>"; };
+		F9D5B1DC1C162078004D68E9 /* TotalPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalPaymentController.m; sourceTree = "<group>"; };
+		F9D5B1E11C162281004D68E9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F9D5B1E21C162281004D68E9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9FAD47C1C137663004FA75A /* PayAndGoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayAndGoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9FAD4801C137663004FA75A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9FAD4821C137663004FA75A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9FAD4831C137663004FA75A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9FAD4851C137663004FA75A /* ItemsPaymentController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ItemsPaymentController.h; sourceTree = "<group>"; };
+		F9FAD4861C137663004FA75A /* ItemsPaymentController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItemsPaymentController.m; sourceTree = "<group>"; };
+		F9FAD4891C137663004FA75A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9FAD48B1C137663004FA75A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F9FAD48E1C137663004FA75A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9FAD4901C137663004FA75A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9FAD4791C137663004FA75A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F103D0DA1C195C4500FA5A2F /* ClipClapCharge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9FAD4731C137663004FA75A = {
+			isa = PBXGroup;
+			children = (
+				F103D0D91C195C4500FA5A2F /* ClipClapCharge.framework */,
+				F9FAD47E1C137663004FA75A /* PayAndGoSample */,
+				F9FAD47D1C137663004FA75A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9FAD47D1C137663004FA75A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9FAD47C1C137663004FA75A /* PayAndGoSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9FAD47E1C137663004FA75A /* PayAndGoSample */ = {
+			isa = PBXGroup;
+			children = (
+				F9FAD4821C137663004FA75A /* AppDelegate.h */,
+				F9FAD4831C137663004FA75A /* AppDelegate.m */,
+				F9D5B1E11C162281004D68E9 /* ViewController.h */,
+				F9D5B1E21C162281004D68E9 /* ViewController.m */,
+				F9FAD4851C137663004FA75A /* ItemsPaymentController.h */,
+				F9FAD4861C137663004FA75A /* ItemsPaymentController.m */,
+				F9D5B1DB1C162078004D68E9 /* TotalPaymentController.h */,
+				F9D5B1DC1C162078004D68E9 /* TotalPaymentController.m */,
+				F9FAD4881C137663004FA75A /* Main.storyboard */,
+				F9FAD48B1C137663004FA75A /* Assets.xcassets */,
+				F9FAD48D1C137663004FA75A /* LaunchScreen.storyboard */,
+				F9FAD4901C137663004FA75A /* Info.plist */,
+				F9FAD47F1C137663004FA75A /* Supporting Files */,
+			);
+			path = PayAndGoSample;
+			sourceTree = "<group>";
+		};
+		F9FAD47F1C137663004FA75A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9FAD4801C137663004FA75A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9FAD47B1C137663004FA75A /* PayAndGoSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "PayAndGoSample" */;
+			buildPhases = (
+				F9FAD4781C137663004FA75A /* Sources */,
+				F9FAD4791C137663004FA75A /* Frameworks */,
+				F9FAD47A1C137663004FA75A /* Resources */,
+				F103D0DC1C195C4600FA5A2F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayAndGoSample;
+			productName = PayAndGoSample;
+			productReference = F9FAD47C1C137663004FA75A /* PayAndGoSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9FAD4741C137663004FA75A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "My Organization";
+				TargetAttributes = {
+					F9FAD47B1C137663004FA75A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "PayAndGoSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9FAD4731C137663004FA75A;
+			productRefGroup = F9FAD47D1C137663004FA75A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9FAD47B1C137663004FA75A /* PayAndGoSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9FAD47A1C137663004FA75A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9FAD48F1C137663004FA75A /* LaunchScreen.storyboard in Resources */,
+				F9FAD48C1C137663004FA75A /* Assets.xcassets in Resources */,
+				F9FAD48A1C137663004FA75A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9FAD4781C137663004FA75A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9FAD4871C137663004FA75A /* ItemsPaymentController.m in Sources */,
+				F9D5B1DD1C162078004D68E9 /* TotalPaymentController.m in Sources */,
+				F9FAD4841C137663004FA75A /* AppDelegate.m in Sources */,
+				F9FAD4811C137663004FA75A /* main.m in Sources */,
+				F9D5B1E31C162281004D68E9 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9FAD4881C137663004FA75A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9FAD4891C137663004FA75A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F9FAD48D1C137663004FA75A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9FAD48E1C137663004FA75A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9FAD4911C137663004FA75A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9FAD4921C137663004FA75A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9FAD4941C137663004FA75A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ClipClap co (GX3G8885N2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ClipClap co (GX3G8885N2)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PayAndGoSample",
+				);
+				INFOPLIST_FILE = PayAndGoSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6e6d8994-fe5d-4b0c-948f-900a2e1dee0e";
+			};
+			name = Debug;
+		};
+		F9FAD4951C137663004FA75A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ClipClap co (47JFZL7X5Q)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PayAndGoSample",
+				);
+				INFOPLIST_FILE = PayAndGoSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6e6d8994-fe5d-4b0c-948f-900a2e1dee0e";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "PayAndGoSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9FAD4911C137663004FA75A /* Debug */,
+				F9FAD4921C137663004FA75A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "PayAndGoSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9FAD4941C137663004FA75A /* Debug */,
+				F9FAD4951C137663004FA75A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9FAD4741C137663004FA75A /* Project object */;
+}
