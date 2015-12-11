@@ -39,7 +39,7 @@
 		F9D5B1DC1C162078004D68E9 /* TotalPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalPaymentController.m; sourceTree = "<group>"; };
 		F9D5B1E11C162281004D68E9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9D5B1E21C162281004D68E9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F9FAD47C1C137663004FA75A /* PayAndGoSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayAndGoSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSParkingAppSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FAD4801C137663004FA75A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9FAD4821C137663004FA75A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9FAD4831C137663004FA75A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		F9FAD47D1C137663004FA75A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F9FAD47C1C137663004FA75A /* PayAndGoSample.app */,
+				F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F9FAD47B1C137663004FA75A /* PayAndGoSample */ = {
+		F9FAD47B1C137663004FA75A /* IOSParkingAppSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "PayAndGoSample" */;
+			buildConfigurationList = F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "IOSParkingAppSample" */;
 			buildPhases = (
 				F9FAD4781C137663004FA75A /* Sources */,
 				F9FAD4791C137663004FA75A /* Frameworks */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = PayAndGoSample;
+			name = IOSParkingAppSample;
 			productName = PayAndGoSample;
-			productReference = F9FAD47C1C137663004FA75A /* PayAndGoSample.app */;
+			productReference = F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -143,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "PayAndGoSample" */;
+			buildConfigurationList = F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "IOSParkingAppSample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -156,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F9FAD47B1C137663004FA75A /* PayAndGoSample */,
+				F9FAD47B1C137663004FA75A /* IOSParkingAppSample */,
 			);
 		};
 /* End PBXProject section */
@@ -306,9 +306,9 @@
 				INFOPLIST_FILE = PayAndGoSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6e6d8994-fe5d-4b0c-948f-900a2e1dee0e";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_NAME = IOSParkingAppSample;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -326,16 +326,16 @@
 				INFOPLIST_FILE = PayAndGoSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6e6d8994-fe5d-4b0c-948f-900a2e1dee0e";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_NAME = IOSParkingAppSample;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "PayAndGoSample" */ = {
+		F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "IOSParkingAppSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9FAD4911C137663004FA75A /* Debug */,
@@ -344,7 +344,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "PayAndGoSample" */ = {
+		F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "IOSParkingAppSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F9FAD4941C137663004FA75A /* Debug */,
