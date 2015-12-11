@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9E469771C1A52B40075816E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469701C1A52B40075816E /* AppDelegate.m */; };
+		F9E469781C1A52B40075816E /* ItemsPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469721C1A52B40075816E /* ItemsPaymentController.m */; };
+		F9E469791C1A52B40075816E /* TotalPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469741C1A52B40075816E /* TotalPaymentController.m */; };
+		F9E4697A1C1A52B40075816E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469761C1A52B40075816E /* ViewController.m */; };
+		F9E469811C1A52DE0075816E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9E4697B1C1A52DE0075816E /* Assets.xcassets */; };
+		F9E469821C1A52DE0075816E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E4697C1C1A52DE0075816E /* LaunchScreen.storyboard */; };
+		F9E469831C1A52DE0075816E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E4697E1C1A52DE0075816E /* Main.storyboard */; };
+		F9E469861C1A52E90075816E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469851C1A52E90075816E /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F103D0DC1C195C4600FA5A2F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F9E4696F1C1A52B40075816E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IOSParkingAppSample/AppDelegate.h; sourceTree = "<group>"; };
+		F9E469701C1A52B40075816E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IOSParkingAppSample/AppDelegate.m; sourceTree = "<group>"; };
+		F9E469711C1A52B40075816E /* ItemsPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsPaymentController.h; path = IOSParkingAppSample/ItemsPaymentController.h; sourceTree = "<group>"; };
+		F9E469721C1A52B40075816E /* ItemsPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsPaymentController.m; path = IOSParkingAppSample/ItemsPaymentController.m; sourceTree = "<group>"; };
+		F9E469731C1A52B40075816E /* TotalPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TotalPaymentController.h; path = IOSParkingAppSample/TotalPaymentController.h; sourceTree = "<group>"; };
+		F9E469741C1A52B40075816E /* TotalPaymentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TotalPaymentController.m; path = IOSParkingAppSample/TotalPaymentController.m; sourceTree = "<group>"; };
+		F9E469751C1A52B40075816E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = IOSParkingAppSample/ViewController.h; sourceTree = "<group>"; };
+		F9E469761C1A52B40075816E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = IOSParkingAppSample/ViewController.m; sourceTree = "<group>"; };
+		F9E4697B1C1A52DE0075816E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = IOSParkingAppSample/Assets.xcassets; sourceTree = "<group>"; };
+		F9E4697D1C1A52DE0075816E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = IOSParkingAppSample/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F9E4697F1C1A52DE0075816E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = IOSParkingAppSample/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F9E469801C1A52DE0075816E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = IOSParkingAppSample/Info.plist; sourceTree = "<group>"; };
+		F9E469851C1A52E90075816E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = IOSParkingAppSample/main.m; sourceTree = "<group>"; };
+		F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSParkingAppSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9FAD4791C137663004FA75A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9E4696E1C1A52A20075816E /* IOSParkingAppSample */ = {
+			isa = PBXGroup;
+			children = (
+				F9E4696F1C1A52B40075816E /* AppDelegate.h */,
+				F9E469701C1A52B40075816E /* AppDelegate.m */,
+				F9E469751C1A52B40075816E /* ViewController.h */,
+				F9E469761C1A52B40075816E /* ViewController.m */,
+				F9E469711C1A52B40075816E /* ItemsPaymentController.h */,
+				F9E469721C1A52B40075816E /* ItemsPaymentController.m */,
+				F9E469731C1A52B40075816E /* TotalPaymentController.h */,
+				F9E469741C1A52B40075816E /* TotalPaymentController.m */,
+				F9E4697E1C1A52DE0075816E /* Main.storyboard */,
+				F9E4697B1C1A52DE0075816E /* Assets.xcassets */,
+				F9E4697C1C1A52DE0075816E /* LaunchScreen.storyboard */,
+				F9E469801C1A52DE0075816E /* Info.plist */,
+				F9E469871C1A53230075816E /* Supporting Files */,
+			);
+			name = IOSParkingAppSample;
+			sourceTree = "<group>";
+		};
+		F9E469871C1A53230075816E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9E469851C1A52E90075816E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9FAD4731C137663004FA75A = {
+			isa = PBXGroup;
+			children = (
+				F9E4696E1C1A52A20075816E /* IOSParkingAppSample */,
+				F9FAD47D1C137663004FA75A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9FAD47D1C137663004FA75A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9FAD47B1C137663004FA75A /* IOSParkingAppSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "IOSParkingAppSample" */;
+			buildPhases = (
+				F9FAD4781C137663004FA75A /* Sources */,
+				F9FAD4791C137663004FA75A /* Frameworks */,
+				F9FAD47A1C137663004FA75A /* Resources */,
+				F103D0DC1C195C4600FA5A2F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IOSParkingAppSample;
+			productName = PayAndGoSample;
+			productReference = F9FAD47C1C137663004FA75A /* IOSParkingAppSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9FAD4741C137663004FA75A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "My Organization";
+				TargetAttributes = {
+					F9FAD47B1C137663004FA75A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "IOSParkingAppSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F9FAD4731C137663004FA75A;
+			productRefGroup = F9FAD47D1C137663004FA75A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9FAD47B1C137663004FA75A /* IOSParkingAppSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9FAD47A1C137663004FA75A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9E469811C1A52DE0075816E /* Assets.xcassets in Resources */,
+				F9E469831C1A52DE0075816E /* Main.storyboard in Resources */,
+				F9E469821C1A52DE0075816E /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9FAD4781C137663004FA75A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9E469861C1A52E90075816E /* main.m in Sources */,
+				F9E4697A1C1A52B40075816E /* ViewController.m in Sources */,
+				F9E469791C1A52B40075816E /* TotalPaymentController.m in Sources */,
+				F9E469771C1A52B40075816E /* AppDelegate.m in Sources */,
+				F9E469781C1A52B40075816E /* ItemsPaymentController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9E4697C1C1A52DE0075816E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9E4697D1C1A52DE0075816E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F9E4697E1C1A52DE0075816E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9E4697F1C1A52DE0075816E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9FAD4911C137663004FA75A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F9FAD4921C137663004FA75A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9FAD4941C137663004FA75A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: ClipClap co (GX3G8885N2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ClipClap co (GX3G8885N2)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PayAndGoSample",
+				);
+				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_NAME = IOSParkingAppSample;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		F9FAD4951C137663004FA75A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ClipClap co (47JFZL7X5Q)";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PayAndGoSample",
+				);
+				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_NAME = IOSParkingAppSample;
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9FAD4771C137663004FA75A /* Build configuration list for PBXProject "IOSParkingAppSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9FAD4911C137663004FA75A /* Debug */,
+				F9FAD4921C137663004FA75A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9FAD4931C137663004FA75A /* Build configuration list for PBXNativeTarget "IOSParkingAppSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9FAD4941C137663004FA75A /* Debug */,
+				F9FAD4951C137663004FA75A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9FAD4741C137663004FA75A /* Project object */;
+}
