@@ -4,6 +4,23 @@
 ClipClap te permite incorporar la acción de pagar en tu aplicación iOS de forma fácil y rápida. Solo debes agregar el framework que te brindamos y los pagos serán gestionados por la aplicación Billetera de ClipClap.
 Te recordamos que para poder hacer de esta integración debes descargar la aplicación de Billetera ClipClap en la AppStore.
 
+## Prerrequisitos ##
+
+ 1. ***Tener una cuenta ClipClap Datáfono:***
+Para poder realizar la integración con ClipClap debes primero tener una cuenta en ClipClap Datáfono, puedes hacer el proceso de registro siguiendo este [link](https://clipclap.co/) o desde la misma aplicación.
+
+ 2. ***Tener el secretKey de tu negocio:***
+Una vez tengas tu usuario Datáfono, tendrás que tener a la mano el “secreKey” de tu negocio, puedes consultar los pasos para adquirirlos en detalle [aquí](https://clipclap.co/).
+
+ 3. **ClipClap Billetera para tus clientes:**
+Para que tus usuarios puedan acceder al evento de pago de ClipClap deben tener instalada la aplicación Billetera, esta permitirá realizar los pagos de forma rápida y segura para tus clientes.
+
+ 4. ***Entorno de Prueba y Entorno de Producción:***
+Recuerda que puedes cambiar entre entorno de prueba y de producción, para llevar un mayor control de tu integración. puedes aprender cómo hacerlo en el siguiente [link](https://clipclap.co/).
+
+
+## Integración ##
+
 Sigue los siguientes pasos para conocer cómo se debe integrar el framework de pago ClipClap en tu aplicación iOS:
 
 **Paso 1: En el proyecto de xcode de tu aplicación integra el framework así:**
