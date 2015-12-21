@@ -23,7 +23,7 @@ Recuerda que puedes cambiar entre entorno de prueba y de producción, para lleva
 
 Sigue los siguientes pasos para conocer cómo se debe integrar el framework de pago ClipClap en tu aplicación iOS:
 
-**Paso 1: En el proyecto de xcode de tu aplicación integra el framework así:**
+**Paso 1: En el proyecto de Xcode de tu aplicación integra el framework así:**
 
 
 ![enter image description here](http://www.clipclap.co/docs/tutorials/ios/images/slide_6.png)
@@ -37,21 +37,21 @@ Sigue los siguientes pasos para conocer cómo se debe integrar el framework de p
 
 **Paso 2: Configurar el cobro.**
 
-Importa el `.h` en la clase donde vas a user ClipClapCharge framework:
+Importa el `.h` en la clase donde vas a usar ClipClapCharge framework:
 
     #import <ClipClapCharge/ClipClapCharge.h>
     
 Con la llave secreta que obtienes abriendo una cuenta ClipClap Datáfano:
 
-    [CCBilleteraPayment shareInstance].secretkey = @"Your Secret Key";
+    [CCBilleteraPayment shareInstance].secretkey = @"Your_Secret_Key";
 
 Para obtener respuesta de la aplicación ClipClap Billetera cuando el cobro se haya realizado (iOS 9 o superior):
     
-    [CCBilleteraPayment shareInstance].universalLinlCallback = @"Your Universal Link"://;
+    [CCBilleteraPayment shareInstance].universalLinlCallback = @"Your_Universal_Link"://;
 
 Para obtener respuesta de la aplicación ClipClap Billetera cuando el cobro se haya realizado (iOS 8.4.1 o anterior):
  
-    [CCBilleteraPayment shareInstance].urlSchemeCallback = @"Your URL Scheme";
+    [CCBilleteraPayment shareInstance].urlSchemeCallback = @"Your_URL_Scheme";
 
 Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
@@ -85,7 +85,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
                                                       tip:propina
                                            andDescription:descripción];
 
-> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes.
+> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-tip'* prevalece sobre la *forma 'producto-por-producto'*.
 
 **Paso 3: Decirle a ClipClap Billetera que realice el cobro**
 
@@ -114,8 +114,8 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
     kCCBilleteraTaxTypeIVARegular => IVA Regular del 16%
     kCCBilleteraTaxTypeIVAReducido => IVA Reducido del 5%
-    kCCBilleteraTaxTypeIVAExcento => IVA 0%
-    kCCBilleteraTaxTypeIVAExcluido => IVA 0%
+    kCCBilleteraTaxTypeIVAExcento => IVA Excento del 0%
+    kCCBilleteraTaxTypeIVAExcluido => IVA Excluido del 0%
     kCCBilleteraTaxTypeConsumoRegular => Consumo Regular 8%
     kCCBilleteraTaxTypeConsumoReducido => Consumo Reducido 4%
     kCCBilleteraTaxTypeIVAAmpliado => IVA Ampliado 20%
