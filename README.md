@@ -68,7 +68,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
                                                       tip:propina
                                            andDescription:descripción];
 
-> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyente.
+> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes.
 
 **Paso 3: Decirle a ClipClap Billetera que realice el cobro**
 
@@ -103,6 +103,38 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
     kCCBilleteraTaxTypeConsumoReducido => Consumo Reducido 4%
     kCCBilleteraTaxTypeIVAAmpliado => IVA Ampliado 20%
 
-## CallBack ##
+## Respuesta por parte de ClipClap Billetera ##
+
+Cuando ClipClap Billetera a ha finalizado el cobro, este responde de tres maneras a la aplicación que solicitó sus servicios. Así:
+
+***Para iOS 9 o superior:***
+
+Si el cobro se realizó exitosamente:
+
+    "Your universal linking?response=ok"
+
+Si el cobro fue rechazado por el cliente:
+  
+    "Your universal linking?response=cancel" //El cobro fue rechazado por el cliente.
+
+Si hubo un error realizando el cobro:
+
+    "Your universal linking?response=error&message=Mostrar este error en tu aplicación iOS"
+
+***Para iOS 8.4.1 o anterior***
+
+Si el cobro se realizó exitosamente:
+
+    "Your URL Scheme://?response=ok"
+
+Si el cobro fue rechazado por el cliente:
+  
+    "Your URL Scheme://?response=cancel" //El cobro fue rechazado por el cliente.
+
+Si hubo un error realizando el cobro:
+
+    "Your URL Scheme://?response=error&message=Mostrar este error en tu aplicación iOS"
+
+
 
 
