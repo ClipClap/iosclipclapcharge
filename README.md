@@ -107,7 +107,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
         }
     }];
 
-> ***IMPORTANTE:*** Si al momento de guardar el ´token´ en su sistema de información falla, no convoque a ClipClap Billetera para que gestione el pago.
+> ***IMPORTANTE:*** Es recomendable guardar el 'token' ya que con éste usted puede relacionar el cobro con su sistema de información.
 
 
 ## Tipos de impuesto ##
@@ -128,30 +128,26 @@ Cuando ClipClap Billetera a ha finalizado el cobro, este responde de tres manera
 
 Si el cobro se realizó exitosamente:
 
-    "Your universal linking?response=ok"
+    "Your_Universal_Link?response=ok"
 
 Si el cobro fue rechazado por el cliente:
   
-    "Your universal linking?response=cancel" //El cobro fue rechazado por el cliente.
+    "Your_Universal_Link?response=cancel" //El cobro fue rechazado por el cliente.
 
 Si hubo un error realizando el cobro:
 
-    "Your universal linking?response=error&message=Mostrar este error en tu aplicación iOS"
+    "Your_Universal_Link?response=error&message=Mostrar este error en tu aplicación iOS"
 
 ***Para iOS 8.4.1 o anterior***
 
 Si el cobro se realizó exitosamente:
 
-    "Your URL Scheme://?response=ok"
+    "Your_URL_Scheme://?response=ok"
 
 Si el cobro fue rechazado por el cliente:
   
-    "Your URL Scheme://?response=cancel" //El cobro fue rechazado por el cliente.
+    "Your_URL_Scheme://?response=cancel" //El cobro fue rechazado por el cliente.
 
 Si hubo un error realizando el cobro:
 
-    "Your URL Scheme://?response=error&message=Mostrar este error en tu aplicación iOS"
-
-
-
-
+    "Your_URL_Scheme://?response=error&message=Mostrar este error en tu aplicación iOS"
