@@ -7,6 +7,7 @@
 //
 
 #import "ItemsPaymentController.h"
+#import "ItemCell.h"
 #import <ClipClapCharge/ClipClapCharge.h>
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -20,10 +21,6 @@
 #define ADD_CELL_TYPE @"AddItemCell"
 #define ITEM_CELL_TYPE @"ItemCell"
 
-#define NAME_TAG 111
-#define PRICE_TAG 222
-#define COUNT_TAG 333
-
 //---------------------------------------------------------------------
 
 @interface ItemsPaymentController ()
@@ -36,6 +33,10 @@
 
 - (IBAction)payAction:(id)sender {
     
+    [self.view endEditing:YES];
+    
+    //------------------------------------------------------------------
+    
     UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
     UIBarButtonItem * barButton = [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
     self.navigationItem.leftBarButtonItem = barButton;
@@ -45,17 +46,11 @@
     
     //------------------------------------------------------------------
     
-    BOOL isDevelopment = [[NSUserDefaults standardUserDefaults] boolForKey:@"ClipClapChargeDevelopment"];
-    
     //Initializing the payment object with the mandatory secret key
-    if (isDevelopment)
-    {
-        [CCBilleteraPayment shareInstance].secretkey = @"MIIwwHc8ksK8AfwUcWJC"; //Development
-    }
-    else
-    {
-        [CCBilleteraPayment shareInstance].secretkey = @"pKFe1P2iYw6z73srBDBx"; //production
-    }
+    [CCBilleteraPayment shareInstance].secretkey = @"pKFe1P2iYw6z73srBDBx";
+    
+    //Reseting all info in the sigleton object
+    [[CCBilleteraPayment shareInstance] resetItems];
     
     //Setting my unirversal linking to enable Billetera App to send me callback parameters about the status of the payment
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
@@ -67,82 +62,48 @@
         [CCBilleteraPayment shareInstance].urlSchemeCallback = @"PayAndGoSample://";
     }
     
+    //------------------------------------------------------------------
+    
     //Iterating all the cell to get the items information
     for (int i = 0; i < self.dataSource.count - 1; i++)
     {
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-     
-        UITextField *itemName = [cell.contentView viewWithTag:NAME_TAG];
-        UITextField *itemPrice = [cell.contentView viewWithTag:PRICE_TAG];
-        UITextField *itemCount = [cell.contentView viewWithTag:COUNT_TAG];
+        ItemCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        
+        NSString *itemPrice = [cell.itemPrice.text stringByReplacingOccurrencesOfString:@"," withString:@""];
+        itemPrice = [itemPrice stringByReplacingOccurrencesOfString:@"." withString:@""];
+        itemPrice = [itemPrice stringByReplacingOccurrencesOfString:@"$" withString:@""];
         
         //Adding the item information to the payment object
-        [[CCBilleteraPayment shareInstance] addItemWithName:itemName.text
-                                                      value:[itemPrice.text doubleValue]
-                                                      count:[itemCount.text doubleValue]
-                                                 andTaxType:kCCBilleteraTaxTypeIVARegular];
+        [[CCBilleteraPayment shareInstance] addItemWithName:cell.itemName.text
+                                                      value:[itemPrice intValue]
+                                                      count:[cell.itemCount.text intValue]
+                                                 andTaxType:cell.taxType];
     }
+    
+    //------------------------------------------------------------------
     
     //Getting the payment token to later commit the payment
     [[CCBilleteraPayment shareInstance] getPaymentTokenWithBlock:^(NSString *token, NSError *error) {
         
+        [activityIndicator stopAnimating];
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.title = @"Paga con Billetera";
+        
         if (error)
         {
             //Logging the error, but the error must be shown to the user gracefully
+            [[[UIAlertView alloc] initWithTitle:@"Error Getting Token"
+                                        message:error.userInfo[NSLocalizedDescriptionKey]
+                                       delegate:nil
+                              cancelButtonTitle:@"Cerrar"
+                              otherButtonTitles:nil] show];
         }
         else
         {
-            [activityIndicator startAnimating];
-            self.navigationItem.leftBarButtonItem = nil;
-            self.navigationItem.title = @"Pagando";
-            
             //Commiting the payment with the retreive payment token
             [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token];
         }
     }];
-    
-    
-//    //Initializing the payment object with the mandatory secret key
-//    [CCBilleteraPayment shareInstance].secretkey = @"Your Secret Key";
-//    
-//    //Use this property if your app is running in iOS 9 or later and you want ClipClap Billetera open your app back gracefully
-//    [CCBilleteraPayment shareInstance].universalLinlCallback = @"Your Universal Link";
-//    
-//    //Use this property if your app is running in iOS 8 or earlier and you want ClipClap Billetera open your app back gracefully
-//    [CCBilleteraPayment shareInstance].urlSchemeCallback = @"Your URL Scheme";
-//    
-//    //Iterating all the cell to get the items information
-//    for (int i = 0; i < self.dataSource.count - 1; i++)
-//    {
-//        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-//        
-//        UITextField *itemName = [cell.contentView viewWithTag:NAME_TAG];
-//        UITextField *itemPrice = [cell.contentView viewWithTag:PRICE_TAG];
-//        UITextField *itemCount = [cell.contentView viewWithTag:COUNT_TAG];
-//        
-//        //Adding the item information to the payment object
-//        [[CCBilleteraPayment shareInstance] addItemWithName:itemName.text                   //The name of the item
-//                                                      value:[itemPrice.text doubleValue]    //The price of the item
-//                                                      count:[itemCount.text doubleValue]    //The count of the same item
-//                                                 andTaxType:kCCBilleteraTaxTypeIVARegular]; //The tax type (IVA Regular, IVA Reducido, Cosumo regular, etc)
-//    }
-//    
-//    //Getting the payment token to later commit the payment with the given information above
-//    [[CCBilleteraPayment shareInstance] getPaymentTokenWithBlock:^(NSString *token, NSError *error) {
-//        
-//        if (error)
-//        {
-//            //Logging the error, but the error must be shown to the user gracefully
-//        }
-//        else
-//        {
-//            //Here you must store in your data base the retreived payment token before commiting the payment. If this storing fails DO NOT COMMIT THE PAYMENT.
-//            //Code here
-//            
-//            //Commiting the payment with the retreived payment token
-//            [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token];
-//        }
-//    }];
 }
 
 //---------------------------------------------------------------------
@@ -175,7 +136,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
 
-    return 60;
+    return 85;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -225,6 +186,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.view endEditing:YES];
     
     if (editingStyle == UITableViewCellEditingStyleInsert)
     {

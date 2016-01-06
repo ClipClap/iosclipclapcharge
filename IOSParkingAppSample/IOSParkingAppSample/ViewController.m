@@ -8,31 +8,22 @@
 
 #import "ViewController.h"
 
-@implementation ViewController
+@interface ViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *itemByItemButton;
+@property (strong, nonatomic) IBOutlet UIButton *totalTaxTipButton;
 
-- (IBAction)changeEnviroment:(id)sender {
-    
-    UISegmentedControl *enviroment = sender;
-    
-    //Development
-    if (enviroment.selectedSegmentIndex == 0)
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ClipClapChargeDevelopment"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"changeEnviroment: YES");
-    }
-    //Production
-    else
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"ClipClapChargeDevelopment"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        NSLog(@"changeEnviroment: NO");
-    }
-}
+@end
+
+@implementation ViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    float radious = self.itemByItemButton.bounds.size.width / 15.0;
+    
+    self.itemByItemButton.layer.cornerRadius = radious;
+    self.totalTaxTipButton.layer.cornerRadius = radious;
     
     //-------------------------------------------
     
@@ -44,11 +35,6 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    
-    [self.navigationController.navigationBar setTranslucent:NO];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ClipClapChargeDevelopment"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    NSLog(@"viewDidLoad: YES");
 }
 
 @end

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9A7C0EC1C3C66FD00A961DD /* ClipClapCharge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */; };
+		F9A7C0ED1C3C66FD00A961DD /* ClipClapCharge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F9A7C0F11C3C85E300A961DD /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C0F01C3C85E300A961DD /* ItemCell.m */; };
 		F9E469771C1A52B40075816E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469701C1A52B40075816E /* AppDelegate.m */; };
 		F9E469781C1A52B40075816E /* ItemsPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469721C1A52B40075816E /* ItemsPaymentController.m */; };
 		F9E469791C1A52B40075816E /* TotalPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469741C1A52B40075816E /* TotalPaymentController.m */; };
@@ -24,6 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F9A7C0ED1C3C66FD00A961DD /* ClipClapCharge.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,6 +35,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClipClapCharge.framework; path = ../ClipClapCharge.framework; sourceTree = "<group>"; };
+		F9A7C0EF1C3C85E300A961DD /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = IOSParkingAppSample/ItemCell.h; sourceTree = "<group>"; };
+		F9A7C0F01C3C85E300A961DD /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = IOSParkingAppSample/ItemCell.m; sourceTree = "<group>"; };
 		F9E4696F1C1A52B40075816E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IOSParkingAppSample/AppDelegate.h; sourceTree = "<group>"; };
 		F9E469701C1A52B40075816E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = IOSParkingAppSample/AppDelegate.m; sourceTree = "<group>"; };
 		F9E469711C1A52B40075816E /* ItemsPaymentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsPaymentController.h; path = IOSParkingAppSample/ItemsPaymentController.h; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A7C0EC1C3C66FD00A961DD /* ClipClapCharge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +73,8 @@
 				F9E469701C1A52B40075816E /* AppDelegate.m */,
 				F9E469751C1A52B40075816E /* ViewController.h */,
 				F9E469761C1A52B40075816E /* ViewController.m */,
+				F9A7C0EF1C3C85E300A961DD /* ItemCell.h */,
+				F9A7C0F01C3C85E300A961DD /* ItemCell.m */,
 				F9E469711C1A52B40075816E /* ItemsPaymentController.h */,
 				F9E469721C1A52B40075816E /* ItemsPaymentController.m */,
 				F9E469731C1A52B40075816E /* TotalPaymentController.h */,
@@ -89,6 +99,7 @@
 		F9FAD4731C137663004FA75A = {
 			isa = PBXGroup;
 			children = (
+				F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */,
 				F9E4696E1C1A52A20075816E /* IOSParkingAppSample */,
 				F9FAD47D1C137663004FA75A /* Products */,
 			);
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A7C0F11C3C85E300A961DD /* ItemCell.m in Sources */,
 				F9E469861C1A52E90075816E /* main.m in Sources */,
 				F9E4697A1C1A52B40075816E /* ViewController.m in Sources */,
 				F9E469791C1A52B40075816E /* TotalPaymentController.m in Sources */,
@@ -295,7 +307,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/PayAndGoSample",
+					"$(PROJECT_DIR)/..",
 				);
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -315,7 +327,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/PayAndGoSample",
+					"$(PROJECT_DIR)/..",
 				);
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
