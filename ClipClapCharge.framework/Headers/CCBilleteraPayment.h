@@ -68,6 +68,11 @@ typedef NS_ENUM(NSUInteger, CCBilleteraTaxType) {
 /**
  *  ClipClapCharge No Documentation
  */
+- (void) resetItems;
+
+/**
+ *  ClipClapCharge No Documentation
+ */
 - (void) addItemWithName:(NSString *)name value:(int)value andCount:(int)count;
 
 /**
