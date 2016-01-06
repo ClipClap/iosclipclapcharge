@@ -45,6 +45,10 @@ Con la llave secreta que obtienes abriendo una cuenta ClipClap Datáfano:
 
     [CCBilleteraPayment shareInstance].secretkey = @"Your_Secret_Key";
 
+Para borrar los Productos de un pago previo: ***(Altamente recomendable cuando haga un cobro nuevo)***
+
+    [[CCBilleteraPayment shareInstance] resetItems];
+
 Para obtener respuesta de la aplicación ClipClap Billetera cuando el cobro se haya realizado (iOS 9 o superior):
     
     [CCBilleteraPayment shareInstance].universalLinlCallback = @"Your_Universal_Link"://;
