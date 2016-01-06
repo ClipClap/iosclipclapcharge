@@ -45,7 +45,7 @@ Con la llave secreta que obtienes abriendo una cuenta ClipClap Datáfano:
 
     [CCBilleteraPayment shareInstance].secretkey = @"Your_Secret_Key";
 
-Para borrar los Productos de un pago previo: ***(Altamente recomendable cuando haga un cobro nuevo)***
+Para borrar los Productos de un cobro previo: ***(Altamente recomendable cuando haga un cobro nuevo)***
 
     [[CCBilleteraPayment shareInstance] resetItems];
 
