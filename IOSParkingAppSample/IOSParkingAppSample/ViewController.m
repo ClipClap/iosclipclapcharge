@@ -27,7 +27,8 @@
     
     self.itemByItemButton.layer.cornerRadius = radious;
     self.totalTaxTipButton.layer.cornerRadius = radious;
-    
+    self.secretKeyTextField.text = @"pKFe1P2iYw6z73srBDBx";
+
     //-------------------------------------------
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.855 green:0.208 blue:0.208 alpha:1]];

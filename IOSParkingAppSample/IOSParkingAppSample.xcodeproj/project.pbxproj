@@ -145,6 +145,7 @@
 				TargetAttributes = {
 					F9FAD47B1C137663004FA75A = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 47JFZL7X5Q;
 					};
 				};
 			};
@@ -312,7 +313,7 @@
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
 				PRODUCT_NAME = IOSParkingAppSample;
 				PROVISIONING_PROFILE = "";
 			};
@@ -332,7 +333,7 @@
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.parking.app.sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
 				PRODUCT_NAME = IOSParkingAppSample;
 				PROVISIONING_PROFILE = "";
 			};
