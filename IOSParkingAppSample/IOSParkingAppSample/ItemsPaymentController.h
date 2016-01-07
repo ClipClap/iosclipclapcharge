@@ -10,6 +10,6 @@
 
 @interface ItemsPaymentController : UITableViewController
 
-
+@property (copy, nonatomic) NSString *secretKey;
 @end
 

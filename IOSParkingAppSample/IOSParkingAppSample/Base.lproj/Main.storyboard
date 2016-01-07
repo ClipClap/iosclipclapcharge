@@ -157,39 +157,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpe-2z-bAl">
-                                <rect key="frame" x="41" y="41" width="238" height="190"/>
+                                <rect key="frame" x="41" y="63" width="238" height="190"/>
                                 <color key="backgroundColor" red="0.85490196078431369" green="0.20784313725490194" blue="0.20784313725490194" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Producto por Producto">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="e21-dC-PnU" kind="show" id="6Ba-Qx-Bcr"/>
+                                    <segue destination="e21-dC-PnU" kind="show" identifier="ItemByItem" id="6Ba-Qx-Bcr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yy7-5z-3NL">
-                                <rect key="frame" x="41" y="273" width="238" height="190"/>
+                                <rect key="frame" x="41" y="286" width="238" height="190"/>
                                 <color key="backgroundColor" red="0.85490196078431369" green="0.20784313725490194" blue="0.20784313725490194" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Total - Impuesto - Propina">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VGo-qn-kYs" kind="show" id="gn7-uG-Ilm"/>
+                                    <segue destination="VGo-qn-kYs" kind="show" identifier="TotalTaxTip" id="gn7-uG-Ilm"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tu llave secreta aquí" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jb2-J6-LlP">
+                                <rect key="frame" x="41" y="18" width="238" height="30"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="0.49595905169999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="a5P-V6-K6z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NIs-bn-b8W" firstAttribute="top" secondItem="Yy7-5z-3NL" secondAttribute="bottom" constant="41" id="Vsy-LF-8Fa"/>
+                            <constraint firstAttribute="trailing" secondItem="jb2-J6-LlP" secondAttribute="trailing" constant="41" id="FJ9-HA-BFS"/>
+                            <constraint firstItem="NIs-bn-b8W" firstAttribute="top" secondItem="Yy7-5z-3NL" secondAttribute="bottom" constant="28" id="Vsy-LF-8Fa"/>
                             <constraint firstItem="Yy7-5z-3NL" firstAttribute="height" secondItem="dpe-2z-bAl" secondAttribute="height" id="YQ4-4c-uEg"/>
-                            <constraint firstItem="Yy7-5z-3NL" firstAttribute="top" secondItem="dpe-2z-bAl" secondAttribute="bottom" constant="42" id="ZFv-vz-4NC"/>
+                            <constraint firstItem="Yy7-5z-3NL" firstAttribute="top" secondItem="dpe-2z-bAl" secondAttribute="bottom" constant="33" id="ZFv-vz-4NC"/>
                             <constraint firstItem="Yy7-5z-3NL" firstAttribute="leading" secondItem="CLV-nX-dWa" secondAttribute="leading" constant="41" id="byd-EA-9DI"/>
+                            <constraint firstItem="jb2-J6-LlP" firstAttribute="top" secondItem="bJ2-tQ-Mil" secondAttribute="bottom" constant="18" id="d8J-4y-xrM"/>
                             <constraint firstAttribute="trailing" secondItem="dpe-2z-bAl" secondAttribute="trailing" constant="41" id="f6d-a0-rFP"/>
                             <constraint firstItem="dpe-2z-bAl" firstAttribute="leading" secondItem="CLV-nX-dWa" secondAttribute="leading" constant="41" id="gGN-UZ-5gs"/>
-                            <constraint firstItem="dpe-2z-bAl" firstAttribute="top" secondItem="bJ2-tQ-Mil" secondAttribute="bottom" constant="41" id="hn5-kU-01R"/>
+                            <constraint firstItem="dpe-2z-bAl" firstAttribute="top" secondItem="bJ2-tQ-Mil" secondAttribute="bottom" constant="63" id="hn5-kU-01R"/>
                             <constraint firstAttribute="trailing" secondItem="Yy7-5z-3NL" secondAttribute="trailing" constant="41" id="pAf-lQ-mwS"/>
-                            <constraint firstItem="Yy7-5z-3NL" firstAttribute="top" secondItem="dpe-2z-bAl" secondAttribute="bottom" constant="42" id="zkJ-vK-yNh"/>
+                            <constraint firstItem="jb2-J6-LlP" firstAttribute="leading" secondItem="CLV-nX-dWa" secondAttribute="leading" constant="41" id="tH5-64-92Q"/>
+                            <constraint firstItem="Yy7-5z-3NL" firstAttribute="top" secondItem="dpe-2z-bAl" secondAttribute="bottom" constant="33" id="zkJ-vK-yNh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -197,6 +209,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="itemByItemButton" destination="dpe-2z-bAl" id="VtY-KU-1RU"/>
+                        <outlet property="secretKeyTextField" destination="jb2-J6-LlP" id="Dkq-9j-cCU"/>
                         <outlet property="totalTaxTipButton" destination="Yy7-5z-3NL" id="vW8-fx-jN7"/>
                     </connections>
                 </viewController>
@@ -215,7 +228,7 @@
                         <sections>
                             <tableViewSection id="gr3-Uj-IE5">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="73" id="FiA-Qt-43d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="73" id="FiA-Qt-43d">
                                         <rect key="frame" x="0.0" y="35" width="320" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FiA-Qt-43d" id="EOo-X9-rjE">
@@ -254,7 +267,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="D3y-4X-Q80">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="D3y-4X-Q80">
                                         <rect key="frame" x="0.0" y="108" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D3y-4X-Q80" id="WSs-GC-KqN">
@@ -293,7 +306,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ad7-CM-w3t">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ad7-CM-w3t">
                                         <rect key="frame" x="0.0" y="152" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ad7-CM-w3t" id="77W-kg-eYW">
@@ -332,7 +345,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xay-Dc-P3P">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="Xay-Dc-P3P">
                                         <rect key="frame" x="0.0" y="196" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xay-Dc-P3P" id="8zo-I3-Gmz">

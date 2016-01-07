@@ -31,6 +31,18 @@
 
 @implementation ItemsPaymentController
 
+- (void) showErrorMessage{
+
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.title = @"Paga con Billetera";
+    
+    [[[UIAlertView alloc] initWithTitle:@"Error"
+                                message:@"Uno o más campos estan vacíos"
+                               delegate:nil
+                      cancelButtonTitle:@"Cerrar"
+                      otherButtonTitles:nil] show];
+}
+
 - (IBAction)payAction:(id)sender {
     
     [self.view endEditing:YES];
@@ -47,7 +59,7 @@
     //------------------------------------------------------------------
     
     //Initializing the payment object with the mandatory secret key
-    [CCBilleteraPayment shareInstance].secretkey = @"pKFe1P2iYw6z73srBDBx";
+    [CCBilleteraPayment shareInstance].secretkey = self.secretKey;
     
     //Reseting all info in the sigleton object
     [[CCBilleteraPayment shareInstance] resetItems];
@@ -68,6 +80,24 @@
     for (int i = 0; i < self.dataSource.count - 1; i++)
     {
         ItemCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        
+        if (cell.itemName.text.length == 0 || [cell.itemName.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0)
+        {
+            [activityIndicator stopAnimating];
+            [self showErrorMessage]; return;
+        }
+        
+        if (cell.itemPrice.text.length == 0 || [cell.itemPrice.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0)
+        {
+            [activityIndicator stopAnimating];
+            [self showErrorMessage]; return;
+        }
+        
+        if (cell.itemCount.text.length == 0 || [cell.itemCount.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]].length == 0)
+        {
+            [activityIndicator stopAnimating];
+            [self showErrorMessage]; return;
+        }
         
         NSString *itemPrice = [cell.itemPrice.text stringByReplacingOccurrencesOfString:@"," withString:@""];
         itemPrice = [itemPrice stringByReplacingOccurrencesOfString:@"." withString:@""];

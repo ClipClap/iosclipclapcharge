@@ -1,0 +1,6 @@
+framework module ClipClapCharge {
+  umbrella header "ClipClapCharge.h"
+
+  export *
+  module * { export * }
+}

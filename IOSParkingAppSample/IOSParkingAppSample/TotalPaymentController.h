@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TotalPaymentController : UITableViewController
-
+@property (copy, nonatomic) NSString *secretKey;
 @end

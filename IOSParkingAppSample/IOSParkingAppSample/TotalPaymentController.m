@@ -87,7 +87,7 @@
     //---------------------------------------------------------------------------------
     
     //Initializing the payment object with the mandatory secret key
-    [CCBilleteraPayment shareInstance].secretkey = @"pKFe1P2iYw6z73srBDBx";
+    [CCBilleteraPayment shareInstance].secretkey = self.secretKey;
     
     //Reseting all info in the sigleton object
     [[CCBilleteraPayment shareInstance] resetItems];

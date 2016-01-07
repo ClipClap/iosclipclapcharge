@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "ItemsPaymentController.h"
+#import "TotalPaymentController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *secretKeyTextField;
 @property (strong, nonatomic) IBOutlet UIButton *itemByItemButton;
 @property (strong, nonatomic) IBOutlet UIButton *totalTaxTipButton;
 
@@ -24,6 +27,7 @@
     
     self.itemByItemButton.layer.cornerRadius = radious;
     self.totalTaxTipButton.layer.cornerRadius = radious;
+    self.secretKeyTextField.text = @"pKFe1P2iYw6z73srBDBx";
     
     //-------------------------------------------
     
@@ -35,6 +39,20 @@
     
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"ItemByItem"])
+    {
+        ItemsPaymentController *controller = (ItemsPaymentController *)segue.destinationViewController;
+        controller.secretKey = self.secretKeyTextField.text;
+    }
+    else if ([segue.identifier isEqualToString:@"TotalTaxTip"])
+    {
+        TotalPaymentController *controller = (TotalPaymentController *)segue.destinationViewController;
+        controller.secretKey = self.secretKeyTextField.text;
+    }
 }
 
 @end
