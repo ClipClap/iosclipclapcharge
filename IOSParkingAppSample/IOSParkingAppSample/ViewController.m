@@ -27,7 +27,6 @@
     
     self.itemByItemButton.layer.cornerRadius = radious;
     self.totalTaxTipButton.layer.cornerRadius = radious;
-    self.secretKeyTextField.text = @"pKFe1P2iYw6z73srBDBx";
 
     //-------------------------------------------
     
