@@ -67,11 +67,11 @@
     //Setting my unirversal linking to enable Billetera App to send me callback parameters about the status of the payment
     if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
     {
-        [CCBilleteraPayment shareInstance].universalLinlCallback = @"";
+        [CCBilleteraPayment shareInstance].universalLinkCallback = @"";
     }
     else
     {
-        [CCBilleteraPayment shareInstance].urlSchemeCallback = @"PayAndGoSample://";
+        [CCBilleteraPayment shareInstance].urlSchemeCallback = @"IOSParkingAppSample://";
     }
     
     //------------------------------------------------------------------
@@ -131,7 +131,17 @@
         else
         {
             //Commiting the payment with the retreive payment token
-            [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token];
+            [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token andBlock:^(BOOL succeeded, NSError *error) {
+                
+                if (succeeded)
+                {
+                    [[[UIAlertView alloc] initWithTitle:@"Pago exitoso" message:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" delegate:nil cancelButtonTitle:@"Cerrar" otherButtonTitles:nil] show];
+                }
+                else
+                {
+                    [[[UIAlertView alloc] initWithTitle:@"Error en el pago" message:error.userInfo[@"error"] delegate:nil cancelButtonTitle:@"Cerrar" otherButtonTitles:nil] show];
+                }
+            }];
         }
     }];
 }

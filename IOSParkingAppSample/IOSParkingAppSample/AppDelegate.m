@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <ClipClapCharge/ClipClapCharge.h>
 
 @interface AppDelegate ()
 
@@ -42,50 +43,24 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
     
-    // Checking that the extenal App that opened Billetera sent the correct schene. (We checked the lower case version because the browsers un-capitalized the scheme)
-    if ([[url scheme] isEqualToString:@"PayAndGoSample"] || [[url scheme] isEqualToString:@"PayAndGoSample"])
+    if ([[CCBilleteraPayment shareInstance] handleURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]])
     {
-        NSArray *paramters = [url.query componentsSeparatedByString:@"&"];
-        NSMutableDictionary *urlParamters = [NSMutableDictionary dictionary];
-        
-        for (NSString *paramterValuePair in paramters)
-        {
-            NSArray *arr = [paramterValuePair componentsSeparatedByString:@"="];
-            [urlParamters setObject:arr[1] forKey:arr[0]];
-        }
-        
-        if ([urlParamters[@"response"] isEqualToString:@"ok"])
-        {
-            [[[UIAlertView alloc] initWithTitle:@"Pago exitoso"
-                                        message:nil
-                                       delegate:nil
-                              cancelButtonTitle:@"Cerrar"
-                              otherButtonTitles:nil] show];
-        }
-        else if ([urlParamters[@"response"] isEqualToString:@"cancel"])
-        {
-            [[[UIAlertView alloc] initWithTitle:@"Pago rechazado"
-                                        message:nil
-                                       delegate:nil
-                              cancelButtonTitle:@"Cerrar"
-                              otherButtonTitles:nil] show];
-        }
-        else
-        {
-            [[[UIAlertView alloc] initWithTitle:@"Error realizando pago"
-                                        message:urlParamters[@"message"]
-                                       delegate:nil
-                              cancelButtonTitle:@"Cerrar"
-                              otherButtonTitles:nil] show];
-        }
-        
-        return YES;
+        return  YES;
     }
-    else
-    {
-        return NO;
-    }
+    
+    return NO;
 }
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    if ([[CCBilleteraPayment shareInstance] handleURL:url sourceApplication:sourceApplication])
+    {
+        return  YES;
+    }
+    
+    return NO;
+}
+
 @end

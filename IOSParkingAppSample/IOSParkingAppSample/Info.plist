@@ -24,12 +24,16 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.clipclap.clipwalletclapwew</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>PayAndGoSample</string>
+				<string>IOSParkingAppSample</string>
 			</array>
 		</dict>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>ClipClapBilletera</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
