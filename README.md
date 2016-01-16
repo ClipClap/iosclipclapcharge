@@ -21,7 +21,7 @@ Recuerda que puedes cambiar entre entorno de prueba y de producción, para lleva
 
 ## Integración ##
 
-Sigue los siguientes pasos para conocer cómo se debe integrar el framework de pago ClipClap en tu aplicación iOS:
+Sigue los siguientes pasos para conocer cómo se debe integrar el framework de pago ClipClap en tu aplicación iOS con Xcode 7 o superior:
 
 **Paso 1: En el proyecto de Xcode de tu aplicación integra el framework así:**
 
@@ -36,6 +36,58 @@ Sigue los siguientes pasos para conocer cómo se debe integrar el framework de p
 
 
 **Paso 2: Configurar el cobro.**
+
+En el app delegate de su aplicación coloque este método si va a usar Universal Links en ***iOS 9 o superior***:
+
+    #import <ClipClapCharge/ClipClapCharge.h>
+
+    -(BOOL) application:(UIApplication *)application 
+				  continueUserActivity:(nonnull NSUserActivity *)userActivity 
+		    restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler {
+    
+	    NSURL *url = userActivity.webpageURL;
+	    
+    	if ([[CCBilleteraPayment shareInstance] handleURL:url sourceApplication:nil])
+		{
+			return YES;
+		}
+    		
+    	return NO;										
+	}
+
+En el app delegate de su aplicación coloque este método si va a usar URLScheme en ***iOS 9 o superior***:
+
+    #import <ClipClapCharge/ClipClapCharge.h>
+    
+    -(BOOL)application:(UIApplication *)app 
+								    openURL:(NSURL *)url options:(NSDictionary *)options {
+    
+    	if ([[CCBilleteraPayment shareInstance] handleURL:url 
+    	sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]])
+		{
+			return YES;
+		}
+    		
+    	return NO;										
+	}
+
+> ***Nota:*** Por experiencia de usuario no es recomendable usar URL Scheme en iOS 9 o superior ya que cuando ClipClap Billetera intente abrir su aplicación una vez realizado el pago ésta no se abrirá automáticamente.
+
+En el app delegate de su aplicación coloque este método en ***iOS 8.4.1 o anterior***:
+
+    #import <ClipClapCharge/ClipClapCharge.h>
+    
+	-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url 
+			sourceApplication:(NSString *)sourceApplication annotation:(id)annotation  {
+    
+    	if ([[CCBilleteraPayment shareInstance] handleURL:url 
+    	sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]])
+		{
+			return YES;
+		}
+    		
+    	return NO;										
+	}
 
 Importa el `.h` en la clase donde vas a usar ClipClapCharge framework:
 
@@ -96,8 +148,8 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 **Paso 3: Decirle a ClipClap Billetera que realice el cobro**
 
     //Obteniendo de ClipClap un token único para este cobro. Hasta este momento todavía el cobro no se ha hecho efectivo.
-    [[CCBilleteraPayment shareInstance] getPaymentTokenWithBlock:^(NSString *token, NSError *error) {
-        
+    [[CCBilleteraPayment shareInstance] 
+							 getPaymentTokenWithBlock:^(NSString *token, NSError *error){    
         if (error)
         {
             //Aqui debe mostrarse al usuario que hubo problemas para realizar el pago.
@@ -105,11 +157,29 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
         else
         {
             //Antes de hacer efectivo el cobro con el 'token' obtenido usted debe guardar
-            //este ´token´ en su sistema de información.
+            //éste en su sistema de información.
             
             //Luego de que haya guardado el ´token´ se procede llamar a ClipClap Billetera
             //para que gestione el cobro.
-            [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token];
+             [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token 
+									          andBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded)
+                {
+                    //Mostrar al usuario que el pago se realizó con éxito.
+                }
+                else
+                {
+                    if (error.code == kCCBilleteraPaymentErrorTypeRejected)
+                    {
+	                    //Mostrar al usuario que el pago fue rechazado
+                    }
+                    else if (error.code == kCCBilleteraPaymentErrorTypeRejected)
+                    {
+	                    //error.userInfo[@"error"] contiene la razón del fallo del pago.
+	                    //Mostrar al usuario que hubo un error realizando el pago.
+                    }
+                }
+            }];
         }
     }];
 
@@ -126,34 +196,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
     kCCBilleteraTaxTypeConsumoReducido => Consumo Reducido 4%
     kCCBilleteraTaxTypeIVAAmpliado => IVA Ampliado 20%
 
-## Respuesta por parte de ClipClap Billetera ##
+## Tipos de error ##
 
-Cuando ClipClap Billetera a ha finalizado el cobro, este responde de tres maneras a la aplicación que solicitó sus servicios. Así:
-
-***Para iOS 9 o superior:***
-
-Si el cobro se realizó exitosamente:
-
-    "Your_Universal_Link?response=ok"
-
-Si el cobro fue rechazado por el cliente:
-  
-    "Your_Universal_Link?response=cancel" //El cobro fue rechazado por el cliente.
-
-Si hubo un error realizando el cobro:
-
-    "Your_Universal_Link?response=error&message=Mostrar este error en tu aplicación iOS"
-
-***Para iOS 8.4.1 o anterior***
-
-Si el cobro se realizó exitosamente:
-
-    "Your_URL_Scheme://?response=ok"
-
-Si el cobro fue rechazado por el cliente:
-  
-    "Your_URL_Scheme://?response=cancel" //El cobro fue rechazado por el cliente.
-
-Si hubo un error realizando el cobro:
-
-    "Your_URL_Scheme://?response=error&message=Mostrar este error en tu aplicación iOS"
+    kCCBilleteraPaymentErrorTypeRejected => El cliente rechazó el pago.
+    kCCBilleteraPaymentErrorTypeFailed => El cliente intentó pagar pero hubo en error
