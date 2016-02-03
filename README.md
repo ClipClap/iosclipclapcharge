@@ -148,8 +148,8 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
  1) *Forma 'producto por producto':* Esta opción permite agregar al cobro productos de forma individual especificando su nombre, precio, cantidad y el impuesto que se le aplica al producto. Así: 
     
-    //Creando un objeto CCBPayment
-    CCBPayment *cobro = [[CCBPayment alloc] init];
+    //Creando un objeto CCBPayment con un ID de referencia único.
+    CCBPayment *cobro = [[CCBPayment alloc] initWithPaymentReference:YOUR_ID_REFERENCE];
     
     //Para cada producto haga esto:
     NSString *nombreProducto = @"Camisa Polo";
@@ -163,8 +163,8 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
 2) *Forma 'total-impuesto-propina':* Esta opción permite definir el total a cobrar de forma inmediata especificando el total a cobrar sin impuestos, el impuesto sobre el total y de forma opcional la propina. Así:
 
-    //Creando un objeto CCBPayment
-    CCBPayment *cobro = [[CCBPayment alloc] init];
+    //Creando un objeto CCBPayment con un ID de referencia único.
+    CCBPayment *cobro = [[CCBPayment alloc] initWithPaymentReference:YOUR_ID_REFERENCE];
     
     NSString *descripción = @"Dos perros calientes y una gaseosa";
     int totalSinImpuesto = 20000;
@@ -184,7 +184,9 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
 > ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-tip'* prevalece sobre la *forma 'producto-por-producto'*.
 
-> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina deshabilitada, la opción de pagar con propina en ClipClap Billetera NO aparecerá*.
+> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina deshabilitada, la opción de pagar con propina en ClipClap Billetera NO aparecerá.
+> 
+> ***IMPORTANTE:*** YOUR_ID_REFERENCE debe diferente cada vez que intente hacer un cobro.
 
 **Paso 4: Decirle a ClipClap Billetera que realice el cobro**
 
