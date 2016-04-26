@@ -7,6 +7,7 @@
 //
 
 #import "TotalPaymentController.h"
+#import "HUDHandler.h"
 #import <ClipClapCharge/ClipClapCharge.h>
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -28,6 +29,33 @@
 @implementation TotalPaymentController
 
 #pragma mark - My Methods
+
+- (NSString *) getUUIDToken{
+    
+    CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+    NSString *uuidString = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
+    CFRelease(uuid);
+    
+    return uuidString;
+}
+
+- (NSString *) getNoDashUUIDToken{
+    
+    return [[self getUUIDToken] stringByReplacingOccurrencesOfString:@"-" withString:@""];
+}
+
+- (NSString *) getNoDashUUIDTokenWithLenght:(NSUInteger)lenght{
+    
+    NSUInteger uuidTimes = ceil(lenght / 32.0);
+    NSString *uuid = @"";
+    
+    for (int i = 0; i < uuidTimes; i++)
+    {
+        uuid = [uuid stringByAppendingString:[self getNoDashUUIDToken]];
+    }
+    
+    return [uuid substringToIndex:lenght];
+}
 
 - (IBAction)commitPayment:(id)sender {
     
@@ -87,20 +115,10 @@
     //---------------------------------------------------------------------------------
     
     //Initializing the payment object with the mandatory secret key
-    [CCBilleteraPayment shareInstance].secretkey = self.secretKey;
+    [CCBPaymentHandler shareInstance].secretkey = self.secretKey;
     
-    //Reseting all info in the sigleton object
-    [[CCBilleteraPayment shareInstance] resetItems];
-    
-    //Setting my unirversal linking to enable Billetera App to send me callback parameters about the status of the payment
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
-    {
-        [CCBilleteraPayment shareInstance].universalLinkCallback = @"";
-    }
-    else
-    {
-        [CCBilleteraPayment shareInstance].urlSchemeCallback = @"IOSParkingAppSample://";
-    }
+    //Creating a CCBPayment object with unique reference string
+    CCBPayment *payment = [[CCBPayment alloc] initWithPaymentReference:[self getNoDashUUIDTokenWithLenght:10]];
     
     //---------------------------------------------------------------------------------
     
@@ -118,28 +136,31 @@
     
     if (self.tip.text.length == 0)
     {
-        [[CCBilleteraPayment shareInstance] addTotalWithValue:[netTotal intValue]
-                                                          tax:[taxTotal intValue]
-                                               andDescription:self.paymentDescription.text];
+        [payment addTotalWithValue:[netTotal intValue]
+                               tax:[taxTotal intValue]
+                    andDescription:self.paymentDescription.text];
     }
     else
     {
-        [[CCBilleteraPayment shareInstance] addTotalWithValue:[netTotal intValue]
-                                                          tax:[taxTotal intValue]
-                                                          tip:[tip intValue]
-                                               andDescription:self.paymentDescription.text];
+        [payment addTotalWithValue:[netTotal intValue]
+                               tax:[taxTotal intValue]
+                               tip:[tip intValue]
+                    andDescription:self.paymentDescription.text];
     }
     
     //---------------------------------------------------------------------------------
     
-    [[CCBilleteraPayment shareInstance] getPaymentTokenWithBlock:^(NSString *token, NSError *error) {
+    //Adding the payment object to the payment handler
+    [CCBPaymentHandler shareInstance].payment = payment;
+    
+    //Getting the payment token to later commit the payment
+    [[CCBPaymentHandler shareInstance] getPaymentTokenWithBlock:^(NSString *token, NSError *error) {
         
-        [activityIndicator stopAnimating];
-        self.navigationItem.leftBarButtonItem = nil;
-        self.navigationItem.title = @"Paga con Billetera";
+        [[HUDHandler shareInstance] hideHUD];
         
         if (error)
         {
+            //Logging the error, but the error must be shown to the user gracefully
             [[[UIAlertView alloc] initWithTitle:@"Error Getting Token"
                                         message:error.userInfo[NSLocalizedDescriptionKey]
                                        delegate:nil
@@ -148,15 +169,16 @@
         }
         else
         {
-            [[CCBilleteraPayment shareInstance] commitPaymentWithToken:token andBlock:^(BOOL succeeded, NSError *error) {
+            //Commiting the payment with the retreive payment token
+            [[CCBPaymentHandler shareInstance] commitPaymentWithToken:token andBlock:^(BOOL succeeded, NSError *error) {
                 
                 if (succeeded)
                 {
-                    [[[UIAlertView alloc] initWithTitle:@"Pago exitoso" message:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" delegate:nil cancelButtonTitle:@"Cerrar" otherButtonTitles:nil] show];
+                    [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"done" title:@"Pago exitoso" andDetail:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" inView:nil];
                 }
                 else
                 {
-                    [[[UIAlertView alloc] initWithTitle:@"Error en el pago" message:error.userInfo[@"error"] delegate:nil cancelButtonTitle:@"Cerrar" otherButtonTitles:nil] show];
+                    [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"errorAlert" title:@"Error en el pago" andDetail:error.userInfo[@"error"] inView:nil];
                 }
             }];
         }

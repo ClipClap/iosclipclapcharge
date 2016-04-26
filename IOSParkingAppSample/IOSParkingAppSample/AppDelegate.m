@@ -8,6 +8,13 @@
 
 #import "AppDelegate.h"
 #import <ClipClapCharge/ClipClapCharge.h>
+#import "HUDHandler.h"
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 @interface AppDelegate ()
 
@@ -17,7 +24,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //Setting my unirversal linking to enable Billetera App to send me callback parameters about the status of the payment
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0"))
+    {
+        [CCBPaymentHandler shareInstance].urlSchemeOrUniversalLinkCallback = @"YOUR_UNIVERSAL_LINK_CONFIGURE_IN_YOUR_SERVER_FOR_THIS_APP";
+    }
+    else
+    {
+        [CCBPaymentHandler shareInstance].urlSchemeOrUniversalLinkCallback = @"YOUR_URL_SCHEME_CONFIGURE_IN_THIS_APP_INFO_LIST";
+    }
+    
     return YES;
 }
 
@@ -43,24 +60,66 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
-    
-    if ([[CCBilleteraPayment shareInstance] handleURL:url sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]])
-    {
-        return  YES;
-    }
-    
-    return NO;
-}
-
+//iOS 8.x.x
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
-    if ([[CCBilleteraPayment shareInstance] handleURL:url sourceApplication:sourceApplication])
+    BOOL didClipClapBilleteraHandle = [[CCBPaymentHandler shareInstance] handleURL:url
+                                                                 sourceApplication:sourceApplication
+                                                      andSuccessfulWhenKilledBlock:^(BOOL succeeded, NSError *error)
     {
-        return  YES;
-    }
+        if (succeeded)
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"done" title:@"Pago exitoso" andDetail:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" inView:nil];
+        }
+        else
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"errorAlert" title:@"Error en el pago" andDetail:error.userInfo[@"error"] inView:nil];
+        }
+    }];
     
-    return NO;
+    return didClipClapBilleteraHandle;
+}
+
+//iOS 9 o superior si se usa URL SCHEME
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary *)options {
+    
+    BOOL didClipClapBilleteraHandle = [[CCBPaymentHandler shareInstance] handleURL:url
+                                                                 sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                      andSuccessfulWhenKilledBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (succeeded)
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"done" title:@"Pago exitoso" andDetail:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" inView:nil];
+        }
+        else
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"errorAlert" title:@"Error en el pago" andDetail:error.userInfo[@"error"] inView:nil];
+        }
+    }];
+    
+    return didClipClapBilleteraHandle;
+}
+
+//iOS 9 o superior si se usa UNIVERSAL LINK
+- (BOOL) application:(UIApplication *)application continueUserActivity:(nonnull NSUserActivity *)userActivity restorationHandler:(nonnull void (^)(NSArray * _Nullable))restorationHandler{
+    
+    NSURL *url = userActivity.webpageURL;
+    BOOL didClipClapBilleteraHandle = [[CCBPaymentHandler shareInstance] handleURL:url
+                                                                 sourceApplication:nil
+                                                      andSuccessfulWhenKilledBlock:^(BOOL succeeded, NSError *error)
+    {
+        if (succeeded)
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"done" title:@"Pago exitoso" andDetail:@"Pago realizado con éxito, gracias por usar ClipClap Billetera" inView:nil];
+        }
+        else
+        {
+            [[HUDHandler shareInstance] showHUDTouchDismissWithImageName:@"errorAlert" title:@"Error en el pago" andDetail:error.userInfo[@"error"] inView:nil];
+        }
+    }];
+    
+    return didClipClapBilleteraHandle;
 }
 
 @end

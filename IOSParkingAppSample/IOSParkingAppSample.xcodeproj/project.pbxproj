@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F9A7C0EC1C3C66FD00A961DD /* ClipClapCharge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */; };
-		F9A7C0ED1C3C66FD00A961DD /* ClipClapCharge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		089541741CD00BE20013CCE4 /* ClipClapCharge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089541731CD00BE20013CCE4 /* ClipClapCharge.framework */; };
+		089541751CD00BE20013CCE4 /* ClipClapCharge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 089541731CD00BE20013CCE4 /* ClipClapCharge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		089541781CD00D000013CCE4 /* HUDHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 089541771CD00D000013CCE4 /* HUDHandler.m */; };
+		089541801CD00D5A0013CCE4 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 0895417C1CD00D5A0013CCE4 /* MBProgressHUD.m */; };
+		089541811CD00D5A0013CCE4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0895417F1CD00D5A0013CCE4 /* SWRevealViewController.m */; };
 		F9A7C0F11C3C85E300A961DD /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C0F01C3C85E300A961DD /* ItemCell.m */; };
 		F9E469771C1A52B40075816E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469701C1A52B40075816E /* AppDelegate.m */; };
 		F9E469781C1A52B40075816E /* ItemsPaymentController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E469721C1A52B40075816E /* ItemsPaymentController.m */; };
@@ -27,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F9A7C0ED1C3C66FD00A961DD /* ClipClapCharge.framework in Embed Frameworks */,
+				089541751CD00BE20013CCE4 /* ClipClapCharge.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,7 +38,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClipClapCharge.framework; path = ../ClipClapCharge.framework; sourceTree = "<group>"; };
+		089541731CD00BE20013CCE4 /* ClipClapCharge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ClipClapCharge.framework; path = ../ClipClapCharge.framework; sourceTree = "<group>"; };
+		089541761CD00D000013CCE4 /* HUDHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHandler.h; sourceTree = "<group>"; };
+		089541771CD00D000013CCE4 /* HUDHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHandler.m; sourceTree = "<group>"; };
+		0895417B1CD00D5A0013CCE4 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		0895417C1CD00D5A0013CCE4 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		0895417E1CD00D5A0013CCE4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0895417F1CD00D5A0013CCE4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		089541821CD015110013CCE4 /* IOSParkingAppSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = IOSParkingAppSample.entitlements; path = IOSParkingAppSample/IOSParkingAppSample.entitlements; sourceTree = "<group>"; };
 		F9A7C0EF1C3C85E300A961DD /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemCell.h; path = IOSParkingAppSample/ItemCell.h; sourceTree = "<group>"; };
 		F9A7C0F01C3C85E300A961DD /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemCell.m; path = IOSParkingAppSample/ItemCell.m; sourceTree = "<group>"; };
 		F9E4696F1C1A52B40075816E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = IOSParkingAppSample/AppDelegate.h; sourceTree = "<group>"; };
@@ -59,16 +69,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A7C0EC1C3C66FD00A961DD /* ClipClapCharge.framework in Frameworks */,
+				089541741CD00BE20013CCE4 /* ClipClapCharge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		089541791CD00D5A0013CCE4 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				0895417A1CD00D5A0013CCE4 /* HUD */,
+				0895417D1CD00D5A0013CCE4 /* SWRevealViewController */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		0895417A1CD00D5A0013CCE4 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				0895417B1CD00D5A0013CCE4 /* MBProgressHUD.h */,
+				0895417C1CD00D5A0013CCE4 /* MBProgressHUD.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		0895417D1CD00D5A0013CCE4 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0895417E1CD00D5A0013CCE4 /* SWRevealViewController.h */,
+				0895417F1CD00D5A0013CCE4 /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		F9E4696E1C1A52A20075816E /* IOSParkingAppSample */ = {
 			isa = PBXGroup;
 			children = (
+				089541821CD015110013CCE4 /* IOSParkingAppSample.entitlements */,
+				089541761CD00D000013CCE4 /* HUDHandler.h */,
+				089541771CD00D000013CCE4 /* HUDHandler.m */,
+				089541791CD00D5A0013CCE4 /* 3rd Party */,
 				F9E4696F1C1A52B40075816E /* AppDelegate.h */,
 				F9E469701C1A52B40075816E /* AppDelegate.m */,
 				F9E469751C1A52B40075816E /* ViewController.h */,
@@ -99,7 +140,7 @@
 		F9FAD4731C137663004FA75A = {
 			isa = PBXGroup;
 			children = (
-				F9A7C0EB1C3C66FD00A961DD /* ClipClapCharge.framework */,
+				089541731CD00BE20013CCE4 /* ClipClapCharge.framework */,
 				F9E4696E1C1A52A20075816E /* IOSParkingAppSample */,
 				F9FAD47D1C137663004FA75A /* Products */,
 			);
@@ -145,7 +186,11 @@
 				TargetAttributes = {
 					F9FAD47B1C137663004FA75A = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 47JFZL7X5Q;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -190,7 +235,10 @@
 				F9E4697A1C1A52B40075816E /* ViewController.m in Sources */,
 				F9E469791C1A52B40075816E /* TotalPaymentController.m in Sources */,
 				F9E469771C1A52B40075816E /* AppDelegate.m in Sources */,
+				089541811CD00D5A0013CCE4 /* SWRevealViewController.m in Sources */,
 				F9E469781C1A52B40075816E /* ItemsPaymentController.m in Sources */,
+				089541781CD00D000013CCE4 /* HUDHandler.m in Sources */,
+				089541801CD00D5A0013CCE4 /* MBProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,18 +350,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ClipClap co (GX3G8885N2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ClipClap co (GX3G8885N2)";
+				CODE_SIGN_ENTITLEMENTS = IOSParkingAppSample/IOSParkingAppSample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/..",
 				);
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
+				PRODUCT_BUNDLE_IDENTIFIER = "YOUR-BUNDLE-ID";
 				PRODUCT_NAME = IOSParkingAppSample;
 				PROVISIONING_PROFILE = "";
 			};
@@ -323,17 +371,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: ClipClap co (47JFZL7X5Q)";
+				CODE_SIGN_ENTITLEMENTS = IOSParkingAppSample/IOSParkingAppSample.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/..",
 				);
 				INFOPLIST_FILE = IOSParkingAppSample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.clipclap.wallet.test;
+				PRODUCT_BUNDLE_IDENTIFIER = "YOUR-BUNDLE-ID";
 				PRODUCT_NAME = IOSParkingAppSample;
 				PROVISIONING_PROFILE = "";
 			};
