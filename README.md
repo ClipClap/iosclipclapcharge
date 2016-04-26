@@ -183,7 +183,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
 > ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-propina'* prevalece sobre la *forma 'producto-por-producto'*.
 
-> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina deshabilitada, la opción de pagar con propina en NO aparecerá enClipClap Billetera.
+> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina inhabilitada, la opción de pagar con propina NO aparecerá en ClipClap Billetera.
 > 
 > ***IMPORTANTE:*** YOUR_ID_REFERENCE debe ser diferente cada vez que intente hacer un cobro nuevo.
 
