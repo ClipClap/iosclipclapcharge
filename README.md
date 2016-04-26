@@ -2,7 +2,7 @@
 ## ClipClapCharge Framework  para iOS##
 
 ClipClap te permite incorporar la acción de pagar en tu aplicación iOS de forma fácil y rápida. Solo debes agregar el framework que te brindamos y los pagos serán gestionados por la aplicación Billetera de ClipClap.
-Te recordamos que para poder hacer de esta integración debes descargar la aplicación de Billetera ClipClap en la AppStore.
+Te recordamos que para poder realizar la integración debes descargar la aplicación de Billetera ClipClap en la AppStore.
 
 ## Prerrequisitos ##
 
@@ -49,7 +49,7 @@ En en el "*info.plist*" de su aplicación agregue:
 
 En el app delegate de su aplicación coloque:
 
-    #import <ClipClapCharge/CCBPaymentHandler.h>
+    #import <ClipClapCharge/ClipClapCharge.h>
 	.
     .
     .
@@ -141,8 +141,7 @@ Si va a dar soporte a  ***iOS 8.x.x***:
 
 En  la clase donde vas a usar ClipClapCharge framework:
 
-    #import <ClipClapCharge/CCBPaymentHandler.h>
-    #import <ClipClapCharge/CCBPayment.h>
+    #import <ClipClapCharge/ClipClapCharge.h>
     
 Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
@@ -182,11 +181,11 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
                          tip:propina
               andDescription:descripción];
 
-> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-tip'* prevalece sobre la *forma 'producto-por-producto'*.
+> ***Nota:*** Estas dos formas de crear el cobro son mutuamente excluyentes. Si usted utiliza ambas formas al mismo tiempo, la *forma 'total-impuesto-propina'* prevalece sobre la *forma 'producto-por-producto'*.
 
-> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina deshabilitada, la opción de pagar con propina en ClipClap Billetera NO aparecerá.
+> ***Nota:*** Si en su cuenta de ClipClap Datáfono tiene lo opción de propina deshabilitada, la opción de pagar con propina en NO aparecerá enClipClap Billetera.
 > 
-> ***IMPORTANTE:*** YOUR_ID_REFERENCE debe diferente cada vez que intente hacer un cobro.
+> ***IMPORTANTE:*** YOUR_ID_REFERENCE debe ser diferente cada vez que intente hacer un cobro nuevo.
 
 **Paso 4: Decirle a ClipClap Billetera que realice el cobro**
 
@@ -199,10 +198,10 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
         }
         else
         {
-            //Antes de hacer efectivo el cobro con el 'token' obtenido usted debe guardar
+            //Antes de hacer efectivo el cobro con el 'token' obtenido, usted debe guardar
             //éste en su sistema de información.
             
-            //Luego de que haya guardado el ´token´ se procede llamar a ClipClap Billetera
+            //Después de guardado el ´token´ se procede a llamar a ClipClap Billetera
             //para que gestione el cobro.
              [[CCBPaymentHandler shareInstance] commitPaymentWithToken:token 
 									          andBlock:^(BOOL succeeded, NSError *error) {
@@ -214,7 +213,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
                 {
                     if (error.code == kCCBilleteraPaymentErrorTypeRejected)
                     {
-	                    //Mostrar al usuario que el pago fue rechazado
+	                    //Mostrar al usuario que el pago fue rechazado.
                     }
                     else if (error.code == kCCBilleteraPaymentErrorTypeRejected)
                     {
@@ -226,7 +225,7 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
         }
     }];
 
-> ***IMPORTANTE:*** Es recomendable guardar el 'token' ya que con éste usted puede relacionar el cobro con su sistema de información.
+> ***IMPORTANTE:*** Es recomendable guardar el 'token' ya que con éste usted puede relacionar el cobro realizado con su propio sistema de información.
 
 
 ## Tipos de impuesto ##
@@ -243,3 +242,8 @@ Hay dos forma de crear un cobro para que ClipClap Billetera lo gestione:
 
     kCCBilleteraPaymentErrorTypeRejected => El cliente rechazó el pago.
     kCCBilleteraPaymentErrorTypeFailed => El cliente intentó pagar pero hubo en error.
+
+
+## IOSParkingAppSample demo app ##
+
+Para que este Demo funcione correctamente en iOS 9 o superior debe configurar el Demo para que trabaje con Universal Links. Visite esta guía para aprender cómo configurar Universal Links en iOS. https://developer.apple.com/library/ios/documentation/General/Conceptual/AppSearch/UniversalLinks.html

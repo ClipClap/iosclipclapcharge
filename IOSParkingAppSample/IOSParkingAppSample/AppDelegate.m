@@ -32,7 +32,7 @@
     }
     else
     {
-        [CCBPaymentHandler shareInstance].urlSchemeOrUniversalLinkCallback = @"YOUR_URL_SCHEME_CONFIGURE_IN_THIS_APP_INFO_LIST";
+        [CCBPaymentHandler shareInstance].urlSchemeOrUniversalLinkCallback = @"YOUR_URL_SCHEME_CONFIGURE_IN_THIS_APP_INFO_LIST"; //This app has currently configured this: IOSParkingAppSample://
     }
     
     return YES;
