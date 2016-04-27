@@ -30,8 +30,9 @@
 
     //-------------------------------------------
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.855 green:0.208 blue:0.208 alpha:1]];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.855 green:0.208 blue:0.208 alpha:1]];
+    UIColor *appColor = [UIColor colorWithRed:0.855 green:0.208 blue:0.208 alpha:1];
+    [[UINavigationBar appearance] setBarTintColor:appColor];
+    [self.navigationController.navigationBar setBarTintColor:appColor];
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];

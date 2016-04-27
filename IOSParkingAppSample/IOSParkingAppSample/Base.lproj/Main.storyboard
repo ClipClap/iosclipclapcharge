@@ -132,7 +132,7 @@
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Paga con Billetera" id="zw9-WO-cOK">
-                        <barButtonItem key="rightBarButtonItem" title="Pagar" id="dDM-Rf-be3">
+                        <barButtonItem key="rightBarButtonItem" title="Cobrar" id="dDM-Rf-be3">
                             <connections>
                                 <action selector="payAction:" destination="e21-dC-PnU" id="fz5-rm-isP"/>
                             </connections>
@@ -395,7 +395,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Paga con Billetera" id="9d3-hj-s4n">
-                        <barButtonItem key="rightBarButtonItem" title="Pagar" id="h45-Fc-4WC">
+                        <barButtonItem key="rightBarButtonItem" title="Cobrar" id="h45-Fc-4WC">
                             <connections>
                                 <action selector="commitPayment:" destination="VGo-qn-kYs" id="hwN-X3-6Vn"/>
                             </connections>
